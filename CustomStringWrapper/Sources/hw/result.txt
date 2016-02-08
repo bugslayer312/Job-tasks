@@ -1,0 +1,20 @@
+//
+//  result
+//  Text
+//  ----------------------------------
+//  Developed with embedXcode
+//
+//  Project 	hw
+//  Created by 	Bugslayer on 22.12.15
+//  Copyright 	© 2015 Bugslayer
+//  License	<#license#>
+//
+
+Результат работы программы:
+
+Hello, World!
+peRm
+NovosibirSk
+mOscoW
+krAsnoYarsk
+ekaTeriNburg

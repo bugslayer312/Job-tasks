@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<options>
+	<option>
+		<plainlenghtrate>10</plainlenghtrate>
+		<paragraphrate>10</paragraphrate>
+		<dotrate>10</dotrate>
+		<headrate>20</headrate>
+		<blocktyperate>10</blocktyperate>
+		<refdensityrate>10</refdensityrate>
+		<tagdensityrate>5</tagdensityrate>
+		<idclassbadrate>10</idclassbadrate>
+		<nsimilaridbadrate>10</nsimilaridbadrate>
+		<viscriterio>10</viscriterio>
+	</option>
+	<option url="russian.rt.com">
+		<plainlenghtrate>5</plainlenghtrate>
+		<paragraphrate>10</paragraphrate>
+		<dotrate>10</dotrate>
+		<headrate>20</headrate>
+		<blocktyperate>10</blocktyperate>
+		<refdensityrate>10</refdensityrate>
+		<tagdensityrate>10</tagdensityrate>
+		<idclassbadrate>10</idclassbadrate>
+		<nsimilaridbadrate>10</nsimilaridbadrate>
+		<viscriterio>8</viscriterio>
+	</option>
+    <option url="www.rbc.ru">
+        <plainlenghtrate>20</plainlenghtrate>
+        <paragraphrate>20</paragraphrate>
+        <dotrate>20</dotrate>
+        <headrate>0</headrate>
+        <blocktyperate>0</blocktyperate>
+        <refdensityrate>0</refdensityrate>
+        <tagdensityrate>0</tagdensityrate>
+        <idclassbadrate>0</idclassbadrate>
+        <nsimilaridbadrate>0</nsimilaridbadrate>
+        <viscriterio>5</viscriterio>
+    </option>
+</options>
