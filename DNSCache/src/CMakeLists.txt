@@ -18,11 +18,6 @@ set (Boost_USE_STATIC_LIBS ON)
 find_package(Boost 1.65.1 COMPONENTS program_options)
 include_directories(${Boost_INCLUDE_DIRS})
 
-enable_testing()
-include(CTest)
-find_package(GTest REQUIRED)
-add_subdirectory(Tests)
-
 add_library(DnsCache STATIC
     DnsCache.cpp
 )
@@ -36,9 +31,9 @@ target_link_libraries(DnsCacheApp
     ${Boost_PROGRAM_OPTIONS_LIBRARY}
 )
 
-#if(BUILD_GTESTS)
-    #enable_testing()
-    #include(CTest)
-    #find_package(GTest REQUIRED)
-    #add_subdirectory(Tests)
-#endif(BUILD_GTESTS)
+if(BUILD_GTESTS)
+    enable_testing()
+    include(CTest)
+    find_package(GTest REQUIRED)
+    add_subdirectory(Tests)
+endif(BUILD_GTESTS)

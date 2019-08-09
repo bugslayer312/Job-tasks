@@ -98,24 +98,26 @@ void PrintUsage(std::ostream& os, po::options_description const& desc, char* app
     os << "USAGE: " << std::endl;
     os << appName << " [Options]" << std::endl << desc;
     os << "Options --file and --name are mutual exclusive" << std::endl;
-    os << appName << " enter in interactive mode if absent both --file and --name" << std::endl;
+    os << appName << " enters in interactive mode if absent both --file and --name" << std::endl;
 }
 
 int RunInteractive() {
-    char buff[256];
+    // char buff[256];
+    std::string name;
     char c = ' ';
     while (true) {
         std::cout << "Enter name: ";
-        std::cin.getline(buff, 255);
-        Resolve(buff);
+        std::cin >> name;
+        Resolve(name);
         do {
             std::cout << "Next? [y/n]: ";
             std::cin >> c;
-        } while(c != 'y' || c != 'n');
-        if (c == 'y') {
+        } while(c != 'y' && c != 'n');
+        if (c == 'n') {
             break;
         }
     }
+    std::cout << "Quit" << std::endl;
     return 0;
 }
 
