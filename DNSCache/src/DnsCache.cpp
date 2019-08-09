@@ -3,6 +3,8 @@
 #include <unordered_map>
 #include <list>
 #include <mutex>
+#include <atomic>
+#include <cassert>
 
 class MutexWrapper {
 public:
@@ -79,9 +81,12 @@ private:
     MutexWrapper m_mutex;
 };
 
+static std::atomic<int> DNSCacheInstanceCount(0);
+
 DNSCache::DNSCache(size_t maxSize, ThreadModel tm) :
     m_impl(std::make_unique<DNSCacheImpl>(maxSize, tm))
 {
+    assert(++DNSCacheInstanceCount == 1);
 }
 
 DNSCache::~DNSCache(){}
@@ -92,7 +97,6 @@ void DNSCache::update(const std::string& name, const std::string& ip) {
 
 std::string DNSCache::resolve(const std::string& name) const {
     return m_impl->resolve(name);
-    return "";
 }
 
 size_t DNSCache::s_maxSize = 100;
