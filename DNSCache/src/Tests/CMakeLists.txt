@@ -10,16 +10,9 @@ target_link_libraries(BaseTest PUBLIC
 	DnsCache
 )
 
-
-
-target_link_libraries(BaseTest PUBLIC
-        GTest::GTest
-        GTest::Main
-        DnsCache
-)
-
 gtest_add_tests(TARGET BaseTest
                 TEST_LIST BaseTest-GTest)
+
 
 add_executable(MultiThreadStressTest
     MultiThreadStressTest.cpp
@@ -33,3 +26,17 @@ target_link_libraries(MultiThreadStressTest PUBLIC
 
 gtest_add_tests(TARGET MultiThreadStressTest
                 TEST_LIST MultiThreadStressTest-GTest)
+
+
+add_executable(MultiThreadRaceSingletonTest
+    MultiThreadRaceSingletonTest.cpp
+)
+
+target_link_libraries(MultiThreadRaceSingletonTest PUBLIC
+        GTest::GTest
+        GTest::Main
+        DnsCache
+)
+
+gtest_add_tests(TARGET MultiThreadRaceSingletonTest
+                TEST_LIST MultiThreadRaceSingletonTest-GTest)

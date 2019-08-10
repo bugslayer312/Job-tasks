@@ -12,7 +12,7 @@ void Threadtask(std::vector<std::string> const& data) {
     for (std::string const& name : data) {
         std::string ip = DNSCache::GetInstance().resolve(name);
         // We won't check full resolve result, coz we have built cache data
-        // so that last symbol of name and corresponding ip were equal
+        // so that last symbols of name and corresponding ip were equal
         EXPECT_EQ(name.back(), ip.back());
     }
 }
