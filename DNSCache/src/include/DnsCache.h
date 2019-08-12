@@ -2,7 +2,6 @@
 
 #include <string>
 #include <memory>
-#include <mutex>
 
 enum class ThreadModel {
     Single,
@@ -15,6 +14,8 @@ public:
     ~DNSCache();
     DNSCache(DNSCache const&) = delete;
     DNSCache& operator=(DNSCache const&) = delete;
+    DNSCache(DNSCache&&) = delete;
+    DNSCache& operator=(DNSCache&&) = delete;
 
     void update(const std::string& name, const std::string& ip);
     std::string resolve(const std::string& name) const;

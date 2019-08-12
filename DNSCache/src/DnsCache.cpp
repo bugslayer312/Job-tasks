@@ -21,7 +21,7 @@ public:
         }
     }
 private:
-    ThreadModel m_tm;
+    ThreadModel const m_tm;
     std::mutex m_mutex;
 };
 
@@ -75,7 +75,7 @@ private:
     }
 
 private:
-    size_t m_maxSize;
+    size_t const m_maxSize;
     std::unordered_map<std::string, CacheEntry> m_cache;
     std::list<std::string> m_order;
     MutexWrapper m_mutex;

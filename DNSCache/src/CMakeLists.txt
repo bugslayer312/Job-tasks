@@ -15,7 +15,7 @@ set (CMAKE_CXX_FLAGS "--std=c++14 -pthread ${CMAKE_CXX_FLAGS}")
 include_directories(include)
 
 set (Boost_USE_STATIC_LIBS ON)
-find_package(Boost 1.65.1 COMPONENTS program_options)
+find_package(Boost 1.65.1 COMPONENTS program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(DnsCache STATIC

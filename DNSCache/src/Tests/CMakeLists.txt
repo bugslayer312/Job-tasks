@@ -28,15 +28,17 @@ gtest_add_tests(TARGET MultiThreadStressTest
                 TEST_LIST MultiThreadStressTest-GTest)
 
 
-add_executable(MultiThreadRaceSingletonTest
-    MultiThreadRaceSingletonTest.cpp
-)
+if (CMAKE_BUILD_TYPE STREQUAL Debug)
+    add_executable(MultiThreadRaceSingletonTest
+        MultiThreadRaceSingletonTest.cpp
+    )
 
-target_link_libraries(MultiThreadRaceSingletonTest PUBLIC
-        GTest::GTest
-        GTest::Main
-        DnsCache
-)
+    target_link_libraries(MultiThreadRaceSingletonTest PUBLIC
+            GTest::GTest
+            GTest::Main
+            DnsCache
+    )
 
-gtest_add_tests(TARGET MultiThreadRaceSingletonTest
-                TEST_LIST MultiThreadRaceSingletonTest-GTest)
+    gtest_add_tests(TARGET MultiThreadRaceSingletonTest
+                    TEST_LIST MultiThreadRaceSingletonTest-GTest)
+endif()
